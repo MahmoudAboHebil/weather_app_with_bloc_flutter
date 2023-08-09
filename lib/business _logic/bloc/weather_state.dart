@@ -9,13 +9,13 @@ class WeatherEvent extends Equatable {
 }
 
 class FetchWeather extends WeatherEvent {
-  final _city;
+  final city;
 
-  FetchWeather(this._city);
+  FetchWeather(this.city);
 
   @override
   // TODO: implement props
-  List<Object> get props => [_city];
+  List<Object> get props => [city];
 }
 
 class WeatherState extends Equatable {
@@ -24,16 +24,18 @@ class WeatherState extends Equatable {
   List<Object> get props => [];
 }
 
+class WeatherIsLoading extends WeatherState {}
+
 class WeatherIsLoaded extends WeatherState {
-  final _weather;
+  final weather;
 
-  WeatherIsLoaded(this._weather);
+  WeatherIsLoaded(this.weather);
 
-  WeatherModel get getWeather => _weather;
+  WeatherModel get getWeather => weather;
 
   @override
   // TODO: implement props
-  List<Object> get props => [_weather];
+  List<Object> get props => [weather];
 }
 
 class WeatherIsNotLoaded extends WeatherState {}
