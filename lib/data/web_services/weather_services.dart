@@ -5,10 +5,12 @@ const openWeatherMapURL = "https://api.openweathermap.org/data/2.5/weather";
 
 class WeatherServices {
   Future<String> getWeather(String city) async {
-    final result = await http.Client().get(
-        Uri.https("$openWeatherMapURL?q=$city&appid=$apiKey&units=metric"));
+    http.Response response = await http
+        .get(Uri.parse("$openWeatherMapURL?q=$city&appid=$apiKey&units"));
 
-    if (result.statusCode != 200) throw Exception();
-    return result.body;
+    if (response.statusCode != 200) throw Exception();
+    print('################################');
+    print(response.body);
+    return response.body;
   }
 }
