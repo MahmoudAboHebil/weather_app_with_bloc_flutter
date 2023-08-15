@@ -88,7 +88,7 @@ class ShowWeatherPage extends StatelessWidget {
                 },
                 child: Text(
                   "Search",
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
             )
