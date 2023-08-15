@@ -18,6 +18,8 @@ class FetchWeather extends WeatherEvent {
   List<Object> get props => [city];
 }
 
+class ResetWeather extends WeatherEvent {}
+
 class WeatherState extends Equatable {
   @override
   // TODO: implement props
@@ -41,5 +43,3 @@ class WeatherIsLoaded extends WeatherState {
 class WeatherIsNotLoaded extends WeatherState {}
 
 class WeatherIsNotSearched extends WeatherState {}
-
-class ResetWeather extends WeatherEvent {}
